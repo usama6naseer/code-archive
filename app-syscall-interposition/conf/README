@@ -1,0 +1,35 @@
+1- Install glib
+sudo apt-get install libglib2.0-dev
+
+2- wget and dependencies installation
+sudo apt-get install libgnutls-dev -y
+sudo apt install automake autoconf -y
+sudo apt-get install texinfo -y
+sudo apt-get install libssl-dev -y
+./configure --prefix=/usr/local/ --with-ssl=openssl
+sudo make
+sudo make install
+
+3- Update IP in session_conf.txt
+
+4- Block RST
+sudo iptables -A OUTPUT -p tcp --tcp-flags RST RST -s 172.16.235.128 -j DROP
+
+
+sudo LD_PRELOAD=./wget_hook_tcp.so wget https://ec2-34-226-208-68.compute-1.amazonaws.com/img -d --no-hsts -O result/obj.html --no-check-certificate
+
+
+
+CHALLENGES:
+1- TLS breaks down continuous increase in window,
+10, 17, 1
+
+
+
+sudo LD_PRELOAD=./wget_hook_tcp.so wget https://magnus.cs.duke.edu/img5mb.jpg -d --no-hsts -O result/obj.html --no-check-certificate
+
+sudo LD_PRELOAD=./wget_hook_tcp.so wget https://ec2-34-226-208-68.compute-1.amazonaws.com/img -d --no-hsts -O result/obj.html --no-check-certificate
+
+
+
+*** PROBLEM -> server not using the right MSS ***

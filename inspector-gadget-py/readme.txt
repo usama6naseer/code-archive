@@ -1,0 +1,1 @@
+This tools fingerpirnts network configurations (TCP congestion control, ICW , HTTP settings TLS settings etc).

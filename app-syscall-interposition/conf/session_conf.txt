@@ -1,0 +1,7 @@
+srcip-192.168.0.16
+dstport-443
+timeout-200
+toutwindow-128
+mss-64
+mssuse-1
+rttinc-0
