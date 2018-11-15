@@ -1,0 +1,3 @@
+This code uses iptables for routing packets to different machines (or ports). The code adopts SDN style of packet_in where nf_queue based rule is added to iptables so that first packet for an untracked IP is sent to user space. A user-space listener processes the packet, makes a routing decision, insert rule to iptables and loops (recycles) the packet to go through iptable chain again.
+
+The overhead of kernel to user-space switching is limited for first packet only. For the rest of packets, decisons are made at kernel level as rules are already there.

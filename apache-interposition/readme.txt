@@ -1,0 +1,1 @@
+INterposes apache's accept() system call to gather TCP information about the user fetching the traffic. The code uses linux's tcp_info struct to monitor TCP's internal state for a connection (congestion windows, RTTs, retransmission etc). An estimate of end-user's network is built using this monitoring.
